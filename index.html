@@ -16,14 +16,21 @@
   .ok { color:#7fd0a0; } .bad { color:#d08a7f; } .warn { color:#d8c07f; }
   #brand { text-align:center; padding:8px 10px; background:#0e1116;
            border-bottom:1px solid #1e2732; }
-  #brand img { width:28px; height:28px; margin-right:8px; border-radius:50%;
+  #brand img { width:40px; height:40px; margin-right:8px; border-radius:50%;
                vertical-align:middle; }
-  #brand b { font-size:15px; font-weight:700; letter-spacing:.14em;
+  #brand b { font-size:25px; font-weight:700; letter-spacing:.14em;
              color:#e6ebf2; vertical-align:middle; }
+  #brandS { text-align:center;font-size:13px; padding:px 16px; background:#0e1116;
+           border-bottom:1px solid #1e2732; }
+  #brandA { font-size:12px; font-weight:700; letter-spacing:.14em;
+             color:#e6ebf2; text-align:center; }
+  
 </style>
 </head>
 <body>
-<div id="brand"><img src="logo_raw.png" alt="" width="28" height="28"><b>R-GAMERS</b></div>
+<div id="brand"><img src="logo_raw.png" alt="" width="28" height="28"><b>R-GAMER'S</b></div>
+<div id="brandA"><b>JIGUANI - MANZANILLO</b></div>
+<div id="brandS"><b>52072114  -  55064378  -  59511352</b></div>
 <div id="wrap">
   <div id="state">BUSCANDO FIRMWARE...</div>
   <div id="det"></div>
@@ -53,7 +60,7 @@
     if (forced === "lapse" || forced === "poops") {
         bug = forced; why = "forced via ?bug=" + forced;
     } else if (!key) {
-        why = "user-agent is not a PlayStation 4";
+        why = "EL AGENTE NO ES USUARIO DE PLAYSTATION 4";
     } else if (fwnum <= 1202) {
         bug = "lapse"; why = key + " <= 12.02";
     } else if (fwnum >= 1250) {
@@ -61,7 +68,7 @@
     } else {
         why = key + " -- no working bug (lapse ends at 12.02, poops needs 12.50)";
     }
-    detEl.innerHTML = "firmware <b>" + (key || "unknown") + "</b>"
+    detEl.innerHTML = "firmware <b>" + (key || "desconocido") + "</b>"
         + " &middot; bug <b>" + (bug || "none") + "</b> &middot; " + why;
 
     if (!bug) { setState("FIRMWARE NO SOPORTADO", "bad"); return; }
@@ -133,3 +140,4 @@
 </script>
 </body>
 </html>
+
