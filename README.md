@@ -1,4 +1,4 @@
-# PS4 WebKit Exploit (11.00 – 13.00)
+WebKit R-GAMER'S for PS4 (11.00 – 13.00)
 
 A static WebKit exploit chain for the PlayStation 4. Everything runs in the
 console's browser, so any static web host will serve it.
