@@ -5,26 +5,69 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>R-GAMER'S EXPLOIT 13.00</title>
 <style>
-  html, body { margin:0; padding:0; background:#0b0d10; color:#c8ced8;
-               font:15px/1.45 "Segoe UI", system-ui, sans-serif; }
-  #wrap { padding:16px 18px; }
-  #state { font-size:22px; font-weight:700; margin:0 0 6px; }
-  #det { font-size:13px; color:#8b95a3; margin:0 0 4px; }
-  #det b { color:#c8ced8; font-weight:600; }
-  #cache { font-size:12px; color:#5c6672; margin:0 0 10px; min-height:14px; }
+  html, body {
+    margin:0;
+    padding:0;
+    min-height:100%;
+    background:#0b0d10 url("fondo.jpg") center center / cover no-repeat fixed;
+    color:#c8ced8;
+    font:15px/1.45 "Segoe UI", system-ui, sans-serif;
+  }
+
+  body {
+    min-height:100vh;
+  }
+
+  #wrap {
+    padding:30px 18px;
+    min-height:calc(100vh - 30px);
+    box-sizing:border-box;
+    background:transparent;
+    text-align:center;
+  }
+
+  #state {
+    font-size:22px;
+    font-weight:700;
+    margin:0 0 10px;
+    text-align:center;
+    text-shadow:0 2px 5px rgba(0,0,0,.9);
+  }
+
+  #det {
+    font-size:13px;
+    color:#d5dbe4;
+    margin:0 0 6px;
+    text-align:center;
+    text-shadow:0 2px 4px rgba(0,0,0,.95);
+  }
+
+  #det b {
+    color:#ffffff;
+    font-weight:600;
+  }
+
+  #cache {
+    font-size:12px;
+    color:#c8ced8;
+    margin:0 0 10px;
+    min-height:14px;
+    text-align:center;
+    text-shadow:0 2px 4px rgba(0,0,0,.95);
+  }
   #cache.cacheok { color:#7fd0a0; }
   .ok { color:#7fd0a0; } .bad { color:#d08a7f; } .warn { color:#d8c07f; }
-   #brand { font-size:17px; text-align:center; padding:8px 10px; background:#0e1116; }
+   #brand { font-size:17px; text-align:center; padding:8px 10px; background:transparent; }
   #brand img { width:100px; height:100px; margin-right:8px; border-radius:0%;
                vertical-align:middle; }
   #brand b { font-size:30px; font-weight:700; letter-spacing:.2em;
              color:#e6ebf2; vertical-align:middle; text-align:center }
   #brandd { font-size:30px; font-weight:700; letter-spacing:.14em;
-             color:0e1116; background:#0e1116;  text-align:center;}
-  #brandS { text-align:center; font-size:11px; letter-spacing:.1em; padding:px 16px; background:#0e1116;
+             color:0e1116; background:#transparent;  text-align:center;}
+  #brandS { text-align:center; font-size:11px; letter-spacing:.1em; padding:px 16px; background:transparent;
            border-bottom:1px solid #1e2732; }
   #brandA { font-size:13px; font-weight:700; letter-spacing:.5em;
-             color:0e1116; background:#0e1116;  text-align:center; }
+             color:0e1116; background:transparent;  text-align:center; }
   
 </style>
 </head>
@@ -63,7 +106,7 @@
     if (forced === "lapse" || forced === "poops") {
         bug = forced; why = "forced via ?bug=" + forced;
     } else if (!key) {
-        why = "EL AGENTE NO ES USUARIO DE PLAYSTATION 4";
+        why = "";
     } else if (fwnum <= 1202) {
         bug = "lapse"; why = key + " <= 12.02";
     } else if (fwnum >= 1250) {
@@ -71,8 +114,8 @@
     } else {
         why = key + " -- no working bug (lapse ends at 12.02, poops needs 12.50)";
     }
-    detEl.innerHTML = "firmware <b>" + (key || "desconocido") + "</b>"
-        + " &middot; bug <b>" + (bug || "none") + "</b> &middot; " + why;
+    detEl.innerHTML = "<b>" + (key || "") + "</b>"
+        + " &middot;  <b>" + (bug || "") + "</b> &middot; " + why;
 
     if (!bug) { setState("FIRMWARE NO SOPORTADO", "bad"); return; }
 
@@ -143,3 +186,4 @@
 </script>
 </body>
 </html>
+
